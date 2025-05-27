@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './App.module.css'
+import style from './App.module.css'
 import { apiExpress } from './api/api'
 import { useNavigate } from 'react-router'
 
@@ -84,7 +84,13 @@ const handleLogin = async(e) => {
         </div>
       )
     })} */}
-  <div style={{padding: '2rem'}}>
+    <div className={style.wrapLogin}>
+
+    
+    <div className={style.wrapImg}>
+    <div className={style.degrade}></div>
+    </div>
+  <div className={style.wrapForm}>
     <form onSubmit={handleLogin}>
     <h2>Login</h2>
     <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required  />
@@ -92,6 +98,7 @@ const handleLogin = async(e) => {
     <button type='submit'>ENTRAR</button>
     <p>{message}</p>
     </form>
+  </div>
   </div>
     </>
   )
