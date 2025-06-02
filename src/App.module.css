@@ -9,7 +9,7 @@
 .wrapImg {
   width: 50%;
   height: 100vh;
-  background-image: url('./assets/logo.webp');
+  background-image: url('./assets/fundo_imagem.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -39,7 +39,7 @@
 .wrapForm form{
   height: 300px;
   width: 300px;
-  border: 2px solid var(--light);
+  border: 2px solid var(--cell);
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -52,9 +52,9 @@
 }
 
 .wrapForm h2{
-  color: var(--black);
+  color: var(--white);
   width: 100%;
-  text-shadow: var(--light) 0px 5px 15px;
+  text-shadow: var(--cell) 0px 5px 15px;
 }
 
 .wrapForm input{
@@ -62,8 +62,8 @@
   border-radius: 10px;
   width: 100%;
   border: none;
-  border: 2px solid var(--light);
-  background-color: var(--white);
+  border: 2px solid var(--cell);
+  background-color: var(--cell);
   color: var(--white);
 }
 
@@ -83,14 +83,14 @@
   border: none;
   background-color: var(--dark);
   transition: all 200ms ease-in-out;
-  color: var(--light);
-  border: 2px solid var(--light);
+  color: var(--cell);
+  border: 2px solid var(--cell);
   font-weight: bold;
 }
 
 .wrapForm button:hover{
   border: 2px solid transparent;
-  background-color: var(--light);
+  background-color: var(--cell);
   color: var(--white);
   cursor: pointer;
   box-shadow: var(--light) 0px 5px 15px;

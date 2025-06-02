@@ -32,14 +32,14 @@ const navigate = useNavigate();
 
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
-const [user, setUser] = useState(null)
+const [/*user*/, setUser] = useState(null)
 const [message, setMessage] = useState('')
 
 useEffect(() => {
   const stouredUser = localStorage.getItem('user')
   if(stouredUser){
     setUser(JSON.parse(stouredUser))
-    navigate('/usersList')
+    navigate('/dashboard')
   }
 }, [navigate])
 
@@ -48,10 +48,11 @@ const handleLogin = async(e) => {
   try{
     const response = await apiExpress.post('/login', {email, password})
     const user = response.data
-    console.log(response.data)
+
+  
     localStorage.setItem('user', JSON.stringify(user))
     setUser(user)
-    navigate('/usersList')
+    navigate('/dashboard')
   }catch (error){
       setMessage('Error no login ' + (error.response?.data?.message || "Verifique os dados"))
   }

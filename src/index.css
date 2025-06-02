@@ -1,8 +1,8 @@
 :root {
  --white: #ffffff;
  --black: #090900;
- --light: #9c13dc00;
- --red: #dc131300;
+ --light: #4b0452ad;
+ --cell: #0b91ebdc;
 }
 
 *{
@@ -11,3 +11,6 @@
     box-sizing: border-box;
 }
 
+section{
+    display: flex;
+}
