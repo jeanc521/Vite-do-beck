@@ -3,6 +3,9 @@ import style from './App.module.css'
 import { apiExpress } from './api/api'
 import { useNavigate } from 'react-router'
 
+import Icon from "./assets/icons8-usuário-homem-com-círculo.gif"
+import Email from "./assets/icons8-enviar.gif"
+import Eye from "./assets/icons8-visível.gif"
 
 function App() {
   
@@ -34,6 +37,8 @@ const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 const [/*user*/, setUser] = useState(null)
 const [message, setMessage] = useState('')
+const [showPassword, setShowPassword] = useState(false)
+
 
 useEffect(() => {
   const stouredUser = localStorage.getItem('user')
@@ -93,9 +98,18 @@ const handleLogin = async(e) => {
     </div>
   <div className={style.wrapForm}>
     <form onSubmit={handleLogin}>
+      <div>
+  <img className={style.iconMenu} src={Icon} alt="Icon login" />
     <h2>Login</h2>
-    <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required  />
-    <input type="password" placeholder='Senha' value={password} onChange={(e) => setPassword(e.target.value)} required/>
+      </div>
+    <div style={{position: 'relative', width: '100%'}}>
+      <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required  />
+      <img className={style.icon} src={Email} alt="Caixa de email" />
+    </div>
+    <div style={{position: 'relative', width: '100%'}}> 
+    <input type={showPassword ? 'text' : 'password'} placeholder='Senha' value={password} onChange={(e) => setPassword(e.target.value)} required/>
+    <img onClick={() => setShowPassword(prev => !prev)} style={{position: "absolute", width: '20px', borderRadius: '100%', right: '10px', top: '10px', cursor: 'pointer'}} className={style.icon} src={Eye} alt="Olho da senha" />
+    </div>
     <button type='submit'>ENTRAR</button>
     <p>{message}</p>
     </form>

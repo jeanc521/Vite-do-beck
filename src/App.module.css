@@ -26,6 +26,22 @@
   background: linear-gradient(90deg, rgba(247, 254, 255, 0) 0%, rgba(9, 9, 9, 1) 100%);
 }
 
+.iconMenu{
+  width: 100px;
+    height: auto;
+    border-radius: 20px;
+ 
+}
+
+.icon{
+  width: 25px;
+  height: auto;
+  border-radius: 100%;
+  position: absolute;
+  top: 17.5%;
+  right: 10px;
+}
+
 .wrapForm {
   width: 50%;
   height: 100vh;

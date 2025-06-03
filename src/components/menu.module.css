@@ -54,7 +54,7 @@
     
 }
 
-@media screll(width < 500 ){
+@media (width < 500 ){
         .navBarClosed{
             width: 70px;
         }
