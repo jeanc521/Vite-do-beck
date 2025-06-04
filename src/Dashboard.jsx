@@ -3,6 +3,8 @@ import style from  './Dashboard.module.css'
 import { apiExpress } from "./api/api";
 import { useState, useEffect } from "react";
 import { Menu } from "./components/menu";
+// import {contato} from "./components/contato"
+
 
 function Dashboard(){
     const navigate = useNavigate()
@@ -50,6 +52,9 @@ function Dashboard(){
                 </div>
                 <div className={style.wrapItem} onClick={() => navigate('/userList')}>
                     <p>Lista de usuarios - ({userCont} usuarios)</p>
+                </div>
+                <div className={style.wrapItem} onClick={() => navigate('./components/contato.jsx')}>
+                    <p>Meio de contato - ({userCont} contato)</p>
                 </div>
             </div>
         </section>

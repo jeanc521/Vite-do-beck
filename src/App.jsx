@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import style from './App.module.css'
 import { apiExpress } from './api/api'
 import { useNavigate } from 'react-router'
+import Contact from  "./Contact"
 
 import Icon from "./assets/icons8-usuário-homem-com-círculo.gif"
 import Email from "./assets/icons8-enviar.gif"
@@ -39,7 +40,6 @@ const [/*user*/, setUser] = useState(null)
 const [message, setMessage] = useState('')
 const [showPassword, setShowPassword] = useState(false)
 
-
 useEffect(() => {
   const stouredUser = localStorage.getItem('user')
   if(stouredUser){
@@ -63,7 +63,9 @@ const handleLogin = async(e) => {
   }
 }
 
-
+const handleContactClick = () => {
+  navigate('/contact')
+}
 
   return (
     <>
@@ -103,14 +105,15 @@ const handleLogin = async(e) => {
     <h2>Login</h2>
       </div>
     <div style={{position: 'relative', width: '100%'}}>
-      <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required  />
+      <input type="email" placeholder='Digite o email' value={email} onChange={(e) => setEmail(e.target.value)} required  />
       <img className={style.icon} src={Email} alt="Caixa de email" />
     </div>
     <div style={{position: 'relative', width: '100%'}}> 
-    <input type={showPassword ? 'text' : 'password'} placeholder='Senha' value={password} onChange={(e) => setPassword(e.target.value)} required/>
+    <input type={showPassword ? 'text' : 'password'} placeholder='Digite a senha' value={password} onChange={(e) => setPassword(e.target.value)} required/>
     <img onClick={() => setShowPassword(prev => !prev)} style={{position: "absolute", width: '20px', borderRadius: '100%', right: '10px', top: '10px', cursor: 'pointer'}} className={style.icon} src={Eye} alt="Olho da senha" />
     </div>
     <button type='submit'>ENTRAR</button>
+    <button  onClick={handleContactClick}>Entrar em contato</button>
     <p>{message}</p>
     </form>
   </div>
